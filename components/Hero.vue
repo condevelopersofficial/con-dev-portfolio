@@ -16,14 +16,14 @@ const resolvedImage = computed(() => {
 <template>
   <div class="w-full overflow-hidden">
     <!-- Hero Image with overlay -->
-    <div class="relative w-full h-auto">
+    <div class="relative w-full h-auto rounded-2xl overflow-hidden shadow-2xl">
       <img 
         :src="resolvedImage" 
         :alt="imageAlt" 
         class="w-full h-auto display-block object-cover"
       />
       <!-- Subtle overlay for better text contrast if needed -->
-      <div class="absolute inset-0 bg-black/5"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
     </div>
     
     <!-- CTA Buttons with modern styling -->
@@ -33,7 +33,7 @@ const resolvedImage = computed(() => {
           <NuxtLink 
             v-if="button.label && button.url" 
             :href="button.url"
-            class="inline-flex px-8 py-3.5 text-white font-semibold rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
+            class="inline-flex px-8 py-3.5 text-white font-semibold rounded-lg transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg"
           >
             {{ button.label }}
           </NuxtLink>

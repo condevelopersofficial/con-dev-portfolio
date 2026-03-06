@@ -43,12 +43,22 @@ html {
   }
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 /* Image container styles */
 .project-image-container {
   aspect-ratio: 13/6;
   width: 100%;
   overflow: hidden;
-  background-color: #f3f4f6;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 12px;
 }
 
 .hero-logo {
@@ -79,8 +89,6 @@ html {
   }
 }
 
-
-
 @media (max-width: 480px) {
   .hero-logo {
     height: 10rem; /* 160px on small screens */
@@ -93,11 +101,11 @@ html {
 
 /* Custom button styles */
 .btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105;
+  @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl;
 }
 
 .btn-secondary {
-  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out;
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out border border-gray-300;
 }
 
 /* Section styling */
@@ -106,26 +114,26 @@ html {
 }
 
 .section-title {
-  @apply text-4xl font-bold text-center mb-4;
+  @apply text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
 }
 
 .section-description {
-  @apply text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto;
+  @apply text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto;
 }
 
 /* Card styling */
 .card {
-  @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+  @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200;
 }
 
 /* Feature item styling */
 .feature-item {
-  @apply flex flex-col items-center text-center p-6;
+  @apply flex flex-col items-center text-center p-6 rounded-lg hover:bg-blue-50 transition-colors duration-300;
 }
 
 /* Testimonial styling */
 .testimonial-card {
-  @apply bg-gray-50 rounded-lg p-8 border border-gray-200;
+  @apply bg-gradient-to-br from-gray-50 to-white rounded-lg p-8 border border-gray-200 shadow-md hover:shadow-lg transition-shadow duration-300;
 }
 
 /* Personal accent color */
@@ -136,6 +144,21 @@ html {
 /* Navigation styling */
 .nav-link {
   @apply text-gray-700 hover:text-blue-600 transition-colors duration-300;
+}
+
+/* Enhanced container styling */
+body {
+  @apply bg-white;
+}
+
+/* Gradient backgrounds for sections */
+.section-gradient {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
 }
 
 

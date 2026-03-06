@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 const menuitems = [
   {
@@ -12,34 +12,10 @@ const menuitems = [
   },
 ];
 
-const isDark = ref(false);
 const mobileOpen = ref(false);
 
 function toggleMobile() {
   mobileOpen.value = !mobileOpen.value;
-}
-
-onMounted(() => {
-  try {
-    const pref = localStorage.getItem('theme-dark');
-    if (pref === 'true') {
-      document.body.classList.add('theme-dark');
-      isDark.value = true;
-    }
-  } catch (e) {
-    // ignore
-  }
-});
-
-function toggleTheme() {
-  isDark.value = !isDark.value;
-  if (isDark.value) {
-    document.body.classList.add('theme-dark');
-    localStorage.setItem('theme-dark', 'true');
-  } else {
-    document.body.classList.remove('theme-dark');
-    localStorage.setItem('theme-dark', 'false');
-  }
 }
 </script>
 
@@ -72,12 +48,6 @@ function toggleTheme() {
           <svg v-else class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
-
-        <!-- Theme toggle -->
-        <button @click="toggleTheme" type="button" aria-label="Toggle theme" class="ml-2 inline-flex items-center px-3 py-2 rounded-md border border-gray-200 bg-white text-sm text-gray-700 hover:bg-gray-50 hover:shadow-sm transition">
-          <span v-if="!isDark">🌙</span>
-          <span v-else>☀️</span>
         </button>
       </nav>
       <!-- mobile menu overlay -->

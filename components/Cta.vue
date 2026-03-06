@@ -7,17 +7,27 @@ const props = defineProps({
 </script>
 
 <template>
-  <div
-    class="flex flex-col items-center px-10 py-10 mx-auto mb-20 text-center border-2 border-green-500 border-dashed rounded-lg sm:px-20 sm:py-20">
-    <h2 class="text-4xl font-bold text-balance text-zinc-800 sm:text-5xl" v-if="title">{{ title }}</h2>
-    <p class="mt-4 text-lg text-zinc-600 sm:text-xl" v-if="description">
-      {{ description }}
-    </p>
-    <div class="flex flex-wrap gap-4 mt-8">
-      <div v-for="button of buttons">
-        <NuxtLink v-if="button.label && button.url" :href="button.url"
-          class="inline-flex px-6 py-3 text-white duration-300 bg-green-600 rounded-sm hover:bg-gray-800 transition-color">
-          {{ button.label }}</NuxtLink>
+  <div class="relative py-20 px-6 md:px-10 mx-auto mb-0 text-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full -mr-48 -mt-48"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/10 rounded-full -ml-40 -mb-40"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight" v-if="title">{{ title }}</h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10" v-if="description">
+        {{ description }}
+      </p>
+      <div class="flex flex-wrap gap-4 mt-10 justify-center">
+        <div v-for="button of buttons" :key="button.label">
+          <NuxtLink 
+            v-if="button.label && button.url" 
+            :href="button.url"
+            class="inline-flex px-8 py-3.5 font-semibold rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1 bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600"
+          >
+            {{ button.label }}
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>

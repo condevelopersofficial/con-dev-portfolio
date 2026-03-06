@@ -1,5 +1,236 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Helvetica", "sans-serif";
+  --font-display: "Inter", "Helvetica", "sans-serif";
 }
+
+/* Custom styles for portfolio */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Image container styles */
+.project-image-container {
+  aspect-ratio: 13/6;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.hero-logo {
+  height: 16rem; /* 256px for 400x400 images */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.nav-logo {
+  height: 3rem; /* 48px for 200x200 images */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive image adjustments */
+@media (max-width: 768px) {
+  .hero-logo {
+    height: 12rem; /* 192px on mobile */
+  }
+  
+  .nav-logo {
+    height: 2.5rem; /* 40px on mobile */
+  }
+  
+  .project-image-container {
+    aspect-ratio: 16/9; /* More square on mobile */
+  }
+}
+
+/* Dark theme overrides (applies when body has .theme-dark) */
+body.theme-dark {
+  background-color: #0f1724; /* slate-900-ish */
+  color: #e6edf3; /* light text */
+}
+
+body.theme-dark .bg-white {
+  background-color: #111827 !important; /* gray-900 */
+}
+
+body.theme-dark .bg-gray-50 {
+  background-color: #0b1220 !important;
+}
+
+body.theme-dark .text-gray-900,
+body.theme-dark .text-zinc-800 {
+  color: #e6edf3 !important;
+}
+
+body.theme-dark .text-gray-600,
+body.theme-dark .text-zinc-600 {
+  color: #9ca3af !important;
+}
+
+body.theme-dark .border-gray-200,
+body.theme-dark .border-gray-100 {
+  border-color: #374151 !important; /* gray-700 */
+}
+
+body.theme-dark .shadow-sm {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.6) !important;
+}
+
+body.theme-dark .container,
+body.theme-dark .project-image-container {
+  /* keep containers readable */
+}
+
+/* Accent adjustments */
+body.theme-dark .bg-emerald-50 { background-color: rgba(16,185,129,0.06) !important; }
+body.theme-dark .text-emerald-700 { color: #34d399 !important; }
+
+/* Technology tag buttons - ensure prominent text in dark theme */
+body.theme-dark .bg-emerald-100 { background-color: rgba(16,185,129,0.15) !important; }
+body.theme-dark .text-emerald-800 { color: #34d399 !important; }
+
+/* Utility: ensure links are visible */
+body.theme-dark a { color: inherit; }
+
+/* Ensure buttons with gradients still appear */
+body.theme-dark .bg-gradient-to-r { /* no-op, gradients will still show */ }
+
+@media (max-width: 480px) {
+  .hero-logo {
+    height: 10rem; /* 160px on small screens */
+  }
+  
+  .project-image-container {
+    aspect-ratio: 4/3; /* Even more square on small screens */
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out;
+}
+
+/* Section styling */
+.section {
+  @apply py-20;
+}
+
+.section-title {
+  @apply text-4xl font-bold text-center mb-4;
+}
+
+.section-description {
+  @apply text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto;
+}
+
+/* Card styling */
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+}
+
+/* Feature item styling */
+.feature-item {
+  @apply flex flex-col items-center text-center p-6;
+}
+
+/* Testimonial styling */
+.testimonial-card {
+  @apply bg-gray-50 rounded-lg p-8 border border-gray-200;
+}
+
+/* Personal accent color */
+.accent-text {
+  @apply text-blue-600;
+}
+
+/* Navigation styling */
+.nav-link {
+  @apply text-gray-700 hover:text-blue-600 transition-colors duration-300;
+}
+
+/* Additional dark-mode mappings to ensure readable text on dark backgrounds */
+body.theme-dark .bg-gray-100 { background-color: #0f1724 !important; }
+body.theme-dark .bg-gray-200 { background-color: #0b1220 !important; }
+body.theme-dark .bg-gray-300 { background-color: #071017 !important; }
+body.theme-dark .bg-white { background-color: #0b1220 !important; }
+
+body.theme-dark .text-gray-700,
+body.theme-dark .text-gray-800,
+body.theme-dark .text-gray-900 { color: #e6edf3 !important; }
+
+body.theme-dark .text-gray-500,
+body.theme-dark .text-gray-600,
+body.theme-dark .text-zinc-600 { color: #9ca3af !important; }
+
+body.theme-dark .text-gray-400 { color: #94a3b8 !important; }
+
+body.theme-dark .btn-secondary {
+  background-color: #111827 !important;
+  color: #cbd5e1 !important;
+  border-color: #1f2937 !important;
+}
+
+body.theme-dark .card,
+body.theme-dark .testimonial-card {
+  background-color: #0b1220 !important;
+  border-color: #1f2937 !important;
+  color: #e6edf3 !important;
+}
+
+/* Ensure headings are bright on dark */
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4 { color: #f1f5f9 !important; }
+
+/* Buttons and links */
+body.theme-dark .nav-link { color: #e6edf3 !important; }
+body.theme-dark a { color: #7ee3b5 !important; }
+
+/* Ensure badges and tags are visible */
+body.theme-dark .bg-emerald-50 { background-color: rgba(16,185,129,0.08) !important; }
+body.theme-dark .text-emerald-700 { color: #34d399 !important; }
+
+/* Fallback for any element with dark bg — make text light */
+body.theme-dark [class*="bg-"] { color: inherit; }
+

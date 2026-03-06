@@ -6,11 +6,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="mb-20">
-    <h2 class="text-center text-zinc-600" v-if="title">{{ title }}</h2>
-    <div class="flex flex-wrap items-center justify-center mt-10 gap-x-12 gap-y-8 sm:gap-x-24 sm:gap-y-12">
-      <div v-for="icon of icons">
-        <Icon class="h-8 md:h-12" v-if="icon.name" :name="icon.name" size="48" />
+  <div class="py-16">
+    <h2 class="text-center text-sm font-semibold text-gray-600 uppercase tracking-widest" v-if="title">{{ title }}</h2>
+    <div class="flex flex-wrap items-center justify-center mt-12 gap-x-16 gap-y-10 md:gap-x-24 md:gap-y-16">
+      <div v-for="(icon, idx) in icons" :key="idx" class="opacity-60 hover:opacity-100 transition-opacity duration-300">
+        <Icon class="h-10 md:h-14 text-gray-400" v-if="icon.name" :name="icon.name" />
       </div>
     </div>
   </div>

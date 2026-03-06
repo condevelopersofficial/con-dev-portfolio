@@ -1,12 +1,12 @@
 <script setup>
 useHead({
   htmlAttrs: { lang: "en-US" },
-  title: "Nuxt Starter",
+  title: "Con Developers - Software Solutions",
   meta: [
     {
       name: "description",
       content:
-        "Nuxt Starter is a minimal template created for quick landing pages, built with Nuxt and Tailwind CSS.",
+        "Con Developers - Innovative software solutions for modern businesses. Specializing in web applications, business management systems, and custom software development.",
     },
   ],
   bodyAttrs: {

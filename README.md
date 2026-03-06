@@ -1,12 +1,12 @@
-# Nuxt Starter
+# CON Developers Portfolio
 
-![Netlify + Nuxt Starter Preview](nuxt-starter-preview.jpg)
+![CON Developers Portfolio Preview](nuxt-starter-preview.jpg)
 
 ---
 
-Nuxt Starter is a minimal template designed for creating quick landing pages, built with Nuxt 3 and Tailwind CSS.
+CON Developers is a professional portfolio showcasing innovative software solutions for modern businesses, built with Nuxt 4 and Tailwind CSS.
 
-**View demo:** [https://demo-nuxt-starter.netlify.app/](https://demo-nuxt-starter.netlify.app/)
+**View live site:** [https://condevelopers.netlify.app/](https://condevelopers.netlify.app/)
 
 ## Deploy to Netlify
 

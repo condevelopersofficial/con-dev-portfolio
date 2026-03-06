@@ -1,104 +1,236 @@
 {
   "hero": {
-    "title": "Build Blazing-Fast Websites with Nuxt.js & Netlify",
-    "description": "Craft high-performing, SEO-friendly web experiences with the dynamic power of Nuxt.js and the speed of Netlify's global edge network.",
-    "image": "images/hero.jpg",
-    "imageAlt": "Nuxt logo and title on abstract background",
+    "image": "/images/hero.png",
+    "imageAlt": "CON Developers Banner",
     "buttons": [
       {
-        "label": "Get Started Today",
-        "url": "https://www.netlify.com/"
+        "label": "View Our Projects",
+        "url": "#projects"
+      },
+      {
+        "label": "Contact Us",
+        "url": "#contact"
       }
     ]
   },
   "logos": {
-    "title": "Trusted by the world's best",
+    "title": "Technologies We Work With",
     "icons": [
       {
-        "name": "i-simple-icons-gitlab"
+        "name": "i-simple-icons-javascript"
       },
       {
-        "name": "i-simple-icons-github"
+        "name": "i-simple-icons-typescript"
       },
       {
-        "name": "i-simple-icons-openai"
+        "name": "i-simple-icons-react"
       },
       {
-        "name": "i-simple-icons-google"
+        "name": "i-simple-icons-vue"
       },
       {
-        "name": "i-simple-icons-netlify"
+        "name": "i-simple-icons-node-dot-js"
+      },
+      {
+        "name": "i-simple-icons-mongodb"
+      },
+      {
+        "name": "i-simple-icons-express"
+      },
+      {
+        "name": "i-simple-icons-socketdotio"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Our Featured Projects",
+    "description": "Enterprise-grade software solutions built with modern technologies",
+    "items": [
+      {
+        "title": "UniCore Business Suite",
+        "description": "Comprehensive ERP system with inventory management, accounting, order processing, and real-time analytics for complete business operations management.",
+        "image": "/images/projects/unicore-business-suite.jpg",
+        "tags": [
+          "React",
+          "Node.js",
+          "MongoDB",
+          "Material-UI",
+          "Redux"
+        ],
+        "features": [
+          "Inventory & Stock Management",
+          "Sales & Purchase Orders",
+          "General Ledger & Accounting",
+          "Customer & Vendor Management",
+          "Barcode & QR Code Generation",
+          "Real-time Analytics Dashboard",
+          "Multi-user Role Management",
+          "PDF & Excel Reporting"
+        ]
+      },
+      {
+        "title": "UniCore HR Solutions",
+        "description": "Complete HR management platform with employee management, payroll processing, attendance tracking with biometric integration, and AI-powered HR assistant.",
+        "image": "/images/projects/unicore-hr-solutions.jpg",
+        "tags": [
+          "React",
+          "Node.js",
+          "MongoDB",
+          "AI/ML",
+          "Material-UI"
+        ],
+        "features": [
+          "Employee Management System",
+          "Automated Payroll Processing",
+          "Biometric Attendance Integration",
+          "Shift & Schedule Management",
+          "Leave & Holiday Management",
+          "Loan & Advance Tracking",
+          "AI-Powered HR Assistant",
+          "Performance Analytics Dashboard",
+          "Geo-fencing & Location Tracking",
+          "Full & Final Settlement"
+        ]
+      },
+      {
+        "title": "Income Tax Calculator",
+        "description": "Advanced tax calculation engine with multi-year support (2014-2026), bulk Excel processing, and detailed financial reporting for individuals and businesses.",
+        "image": "/images/projects/income-tax-calculator.jpg",
+        "tags": [
+          "Node.js",
+          "Express",
+          "Excel",
+          "REST API"
+        ],
+        "features": [
+          "Multi-year Tax Calculations (2014-2026)",
+          "Individual Tax Computation",
+          "Bulk Excel Processing",
+          "Real-time Tax Computation",
+          "Detailed Financial Reports",
+          "Monthly & Annual Breakdowns",
+          "Cross-year Comparison",
+          "REST API Integration"
+        ]
+      },
+      {
+        "title": "Fannecto Messaging",
+        "description": "Enterprise real-time messaging platform with Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.",
+        "image": "/images/projects/fannecto-messaging.jpg",
+        "tags": [
+          "React",
+          "TypeScript",
+          "Socket.io",
+          "Node.js",
+          "Material-UI"
+        ],
+        "features": [
+          "Real-time Messaging with Socket.io",
+          "Group Chats & Channels",
+          "File Sharing & Preview",
+          "End-to-end Encryption",
+          "Presence & Typing Indicators",
+          "User Authentication & Authorization",
+          "Admin Dashboard",
+          "Email Notifications",
+          "Message Formatting & Emojis",
+          "Password Reset System"
+        ]
       }
     ]
   },
   "features": {
-    "title": "Why choose Nuxt.js?",
-    "description": "Nuxt.js is a powerful framework built on top of Vue.js that provides an excellent developer experience.",
+    "title": "Our Solutions",
+    "description": "We deliver comprehensive software solutions designed to solve complex business challenges:",
     "items": [
       {
-        "title": "Server-Side Rendering",
-        "description": "Nuxt.js allows you to build SSR applications with Vue.js, ensuring fast initial page loads and better SEO."
+        "title": "Enterprise Resource Planning",
+        "description": "Full-featured ERP systems with inventory, accounting, order management, and real-time analytics."
       },
       {
-        "title": "Static Site Generation",
-        "description": "You can pre-render pages at build time for static websites. This helps with performance and scalability by serving content directly from a CDN."
+        "title": "HR Management Systems",
+        "description": "Complete HR platforms with payroll automation, biometric integration, and AI-powered assistance."
       },
       {
-        "title": "Auto-Routing",
-        "description": "Nuxt automatically generates routes based on the file structure inside the pages directory, reducing the need for manual configuration."
+        "title": "Financial Applications",
+        "description": "Advanced financial tools for tax calculation, accounting, and compliance management."
       },
       {
-        "title": "File-based Configuration",
-        "description": "Nuxt uses a convention-over-configuration approach, allowing you to define configurations easily in nuxt.config.js without much boilerplate."
+        "title": "Real-time Communication",
+        "description": "Secure messaging platforms with Socket.io, file sharing, and enterprise-grade features."
       },
       {
-        "title": "Dynamic Imports",
-        "description": "It supports lazy loading of components with dynamic imports to improve performance by splitting the code into smaller chunks."
+        "title": "Custom Web Applications",
+        "description": "Scalable MERN stack applications with modern UI frameworks and best practices."
       },
       {
-        "title": "SEO Friendly",
-        "description": "With SSR, SSG, and automatic meta tag handling, Nuxt.js ensures your application is SEO-friendly."
+        "title": "AI-Powered Solutions",
+        "description": "Intelligent systems with AI assistants, automated workflows, and decision support."
       }
     ]
   },
   "testimonials": {
-    "title": "What Our Users Are Saying",
-    "description": "Hear from our clients about their experiences working with Nuxt and Netlify.",
+    "title": "Client Success Stories",
+    "description": "Businesses that transformed their operations with our solutions:",
     "items": [
       {
-        "quote": "Nuxt has made building our projects so much easier and more enjoyable! Its simple setup and powerful features help us create fast, responsive websites with minimal effort.",
+        "quote": "The UniCore Business Suite transformed our inventory management, reducing processing time by 60% and improving our operational efficiency significantly.",
         "author": {
-          "name": "Daniel H.",
-          "title": "Marketing Specialist at Some Company",
+          "name": "Sarah Johnson",
+          "title": "Operations Director, TechCorp Inc.",
           "avatar": "images/person-1.jpg"
         }
       },
       {
-        "quote": "The scalability offered by Netlify and the flexibility of Nuxt have allowed us to expand our site's functionality without worrying about performance issues. This combination is a powerful solution for any growing business.",
+        "quote": "The HR Solutions platform with AI assistant streamlined our entire HR workflow, reducing administrative overhead by 40% while improving employee satisfaction.",
         "author": {
-          "name": "Sarah L.",
-          "title": "CEO at Some Company",
+          "name": "Michael Chen",
+          "title": "HR Director, Global Solutions",
           "avatar": "images/person-2.jpg"
         }
       },
       {
-        "quote": "Switching to Nuxt and Netlify was a game-changer for our development process. The seamless integration between the two platforms allowed us to deploy faster and with fewer headaches.",
+        "quote": "The tax calculation system saved us hundreds of hours in manual processing and improved our financial reporting accuracy by 95%.",
         "author": {
-          "name": "Mark T.",
-          "title": "Frontend Engineer at Some Company",
+          "name": "David Rodriguez",
+          "title": "CFO, Financial Dynamics",
           "avatar": "images/person-3.jpg"
         }
       }
     ]
   },
   "cta": {
-    "title": "Start Building with Nuxt & Netlify",
-    "description": "Let your next project be smarter, faster, and effortlessly deployable.",
+    "title": "Ready to Transform Your Business?",
+    "description": "Let us discuss how our software solutions can drive efficiency and growth for your organization.",
     "buttons": [
       {
-        "label": "Get Started Today",
-        "url": "https://www.netlify.com/"
+        "label": "Schedule a Consultation",
+        "url": "mailto:condevelopersofficial@gmail.com"
+      },
+      {
+        "label": "View Case Studies",
+        "url": "#projects"
+      }
+    ]
+  },
+  "social": {
+    "title": "Connect With Us",
+    "links": [
+      {
+        "name": "Email",
+        "url": "mailto:condevelopersofficial@gmail.com",
+        "icon": "i-simple-icons-gmail"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/company/con-developers",
+        "icon": "i-simple-icons-linkedin"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/con-developers",
+        "icon": "i-simple-icons-github"
       }
     ]
   }
-} 
+}

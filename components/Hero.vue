@@ -1,28 +1,42 @@
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
-  title: String,
-  description: String,
   image: String,
   imageAlt: String,
   buttons: Array
 });
+
+const resolvedImage = computed(() => {
+  if (!props.image) return '';
+  return props.image.startsWith('/') ? props.image : `/${props.image}`;
+});
 </script>
 
 <template>
-  <div class="flex flex-col gap-12 mt-10 mb-20 lg:items-center lg:flex-row">
-    <div class="flex-1 w-full">
-      <NuxtImg class="rounded-lg" sizes="100vw lg:600px" :src="image" :alt="imageAlt" v-if="image" />
+  <div class="w-full overflow-hidden">
+    <!-- Hero Image with overlay -->
+    <div class="relative w-full h-auto">
+      <img 
+        :src="resolvedImage" 
+        :alt="imageAlt" 
+        class="w-full h-auto display-block object-cover"
+      />
+      <!-- Subtle overlay for better text contrast if needed -->
+      <div class="absolute inset-0 bg-black/5"></div>
     </div>
-    <div class="flex-1 w-full">
-      <h1 class="text-4xl font-bold text-zinc-800 sm:text-5xl text-balance" v-if="title">{{ title }}</h1>
-      <p class="max-w-xl mt-4 text-lg text-zinc-600 sm:text-xl" v-if="description">
-        {{ description }}
-      </p>
-      <div class="flex flex-wrap gap-4 mt-8">
-        <div v-for="button of buttons">
-          <NuxtLink v-if="button.label && button.url" :href="button.url"
-            class="inline-flex px-6 py-3 text-white duration-300 bg-green-600 rounded-sm hover:bg-gray-800 transition-color">
-            {{ button.label }}</NuxtLink>
+    
+    <!-- CTA Buttons with modern styling -->
+    <div v-if="buttons && buttons.length > 0" class="container mx-auto mt-12 flex justify-center pb-12">
+      <div class="flex flex-wrap gap-4 justify-center">
+        <div v-for="button of buttons" :key="button.label">
+          <NuxtLink 
+            v-if="button.label && button.url" 
+            :href="button.url"
+            class="inline-flex px-8 py-3.5 text-white font-semibold rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:-translate-y-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700"
+          >
+            {{ button.label }}
+          </NuxtLink>
         </div>
       </div>
     </div>

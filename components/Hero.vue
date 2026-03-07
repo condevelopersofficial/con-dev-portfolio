@@ -1,44 +1,115 @@
 <script setup>
-import { computed } from 'vue';
+const scrollToProjects = () => {
+  const element = document.getElementById('projects')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
-const props = defineProps({
-  image: String,
-  imageAlt: String,
-  buttons: Array
-});
-
-const resolvedImage = computed(() => {
-  if (!props.image) return '';
-  return props.image.startsWith('/') ? props.image : `/${props.image}`;
-});
+const scrollToContact = () => {
+  const element = document.getElementById('contact')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
-  <div class="w-full overflow-hidden">
-    <!-- Hero Image with overlay -->
-    <div class="relative w-full h-auto rounded-2xl overflow-hidden shadow-2xl">
-      <img 
-        :src="resolvedImage" 
-        :alt="imageAlt" 
-        class="w-full h-auto display-block object-cover"
-      />
-      <!-- Subtle overlay for better text contrast if needed -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-    </div>
-    
-    <!-- CTA Buttons with modern styling -->
-    <div v-if="buttons && buttons.length > 0" class="container mx-auto mt-12 flex justify-center pb-12">
-      <div class="flex flex-wrap gap-4 justify-center">
-        <div v-for="button of buttons" :key="button.label">
-          <NuxtLink 
-            v-if="button.label && button.url" 
-            :href="button.url"
-            class="inline-flex px-8 py-3.5 text-white font-semibold rounded-lg transition-all duration-300 ease-out hover:shadow-2xl hover:-translate-y-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg"
-          >
-            {{ button.label }}
-          </NuxtLink>
+  <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-32">
+    <div class="max-w-7xl mx-auto w-full">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="space-y-8">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full">
+            <Icon name="simple-icons:sparkles" class="w-4 h-4 text-yellow-400" />
+            <span class="text-sm text-gray-700">Available for new projects</span>
+          </div>
+
+          <!-- Heading -->
+          <div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4">
+              Crafting Digital
+              <span class="block mt-2" style="color: #6366f1">Solutions</span>
+            </h1>
+          </div>
+
+          <!-- Description -->
+          <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+            Transforming ideas into powerful software applications. Specializing in modern web development with cutting-edge technologies.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4">
+            <button
+              @click="scrollToProjects"
+              class="group px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all flex items-center gap-2 font-semibold"
+            >
+              View Projects
+              <Icon name="simple-icons-arrowright" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            <button
+              @click="scrollToContact"
+              class="px-8 py-4 border-2 border-gray-900 text-gray-900 rounded-full hover:bg-gray-50 transition-all font-semibold"
+            >
+              Get in Touch
+            </button>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex items-center gap-8 pt-8">
+            <div>
+              <div class="text-3xl font-bold text-gray-900">4</div>
+              <div class="text-sm text-gray-600">Enterprise Projects</div>
+            </div>
+            <div class="h-12 w-px bg-gray-200" />
+            <div>
+              <div class="text-3xl font-bold text-gray-900">4</div>
+              <div class="text-sm text-gray-600">Years Experience</div>
+            </div>
+            <div class="h-12 w-px bg-gray-200" />
+            <div>
+              <div class="text-3xl font-bold text-gray-900">100K+</div>
+              <div class="text-sm text-gray-600">Lines of Code</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="relative">
+          <div class="relative">
+            <!-- Blur Glows -->
+            <div
+              class="absolute top-0 right-0 w-72 h-72 rounded-full blur-3xl opacity-20"
+              style="background: #6366f1"
+            />
+            <div
+              class="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-3xl opacity-20"
+              style="background: #ef4444"
+            />
+
+            <!-- Card -->
+            <div class="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+              <div class="flex items-center justify-center mb-6">
+                <img src="/images/Logo.png" alt="Logo" class="w-32 h-32" />
+              </div>
+
+              <div class="space-y-4">
+                <div class="h-3 rounded-full" style="background: #22c55e; width: 80%" />
+                <div class="h-3 rounded-full" style="background: #fed600; width: 60%" />
+                <div class="h-3 rounded-full" style="background: #ef4444; width: 90%" />
+                <div class="h-3 rounded-full" style="background: #6366f1; width: 70%" />
+              </div>
+
+              <div class="mt-8 flex items-center justify-center gap-3">
+                <Icon name="simple-icons-code" class="w-6 h-6 text-gray-400" />
+                <div class="text-sm text-gray-500">Building the future, one line at a time</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

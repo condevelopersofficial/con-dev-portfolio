@@ -1,73 +1,150 @@
 <script setup>
-const props = defineProps({
-  title: String,
-  description: String,
-  items: Array
-});
+import { ref } from 'vue'
+
+const selectedCategory = ref('All')
+
+const projects = [
+  {
+    id: 1,
+    title: 'UniCore Business Suite',
+    slug: 'unicore-business-suite',
+    description: 'Comprehensive ERP system with inventory management, accounting, order processing, and real-time analytics for complete business operations management.',
+    image: '/images/projects/unicore-business-suite.jpg',
+    tags: ['React', 'Node.js', 'MongoDB', 'Material-UI', 'Redux'],
+    color: '#22c55e',
+    category: 'ERP',
+    date: 'March 2026'
+  },
+  {
+    id: 2,
+    title: 'UniCore HR Solutions',
+    slug: 'unicore-hr-solutions',
+    description: 'Complete HR management platform with employee management, payroll processing, attendance tracking with biometric integration, and AI-powered HR assistant.',
+    image: '/images/projects/unicore-hr-solutions.jpg',
+    tags: ['React', 'Node.js', 'MongoDB', 'AI/ML', 'Material-UI'],
+    color: '#6366f1',
+    category: 'HR',
+    date: 'February 2026'
+  },
+  {
+    id: 3,
+    title: 'Income Tax Calculator',
+    slug: 'income-tax-calculator',
+    description: 'Advanced tax calculation engine with multi-year support (2014-2026), bulk Excel processing, and detailed financial reporting for individuals and businesses.',
+    image: '/images/projects/income-tax-calculator.jpg',
+    tags: ['Node.js', 'Express', 'Excel', 'REST API'],
+    color: '#ef4444',
+    category: 'Finance',
+    date: 'January 2026'
+  },
+  {
+    id: 4,
+    title: 'Fannecto Messaging',
+    slug: 'fannecto-messaging',
+    description: 'Enterprise real-time messaging platform with Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.',
+    image: '/images/projects/fannecto-messaging.jpg',
+    tags: ['React', 'TypeScript', 'Socket.io', 'Node.js', 'Material-UI'],
+    color: '#fed600',
+    category: 'Communication',
+    date: 'December 2025'
+  }
+]
+
+const categories = ['All', 'ERP', 'HR', 'Finance', 'Communication']
+
+const filteredProjects = computed(() => {
+  return selectedCategory.value === 'All'
+    ? projects
+    : projects.filter(p => p.category === selectedCategory.value)
+})
 </script>
 
 <template>
-  <div class="py-20">
-    <Container>
+  <section id="projects" class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Header -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-4 leading-tight" v-if="title">{{ title }}</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed" v-if="description">{{ description }}</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Featured Projects
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Showcasing our latest work in software development and digital innovation
+        </p>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div 
-          v-for="(project, index) in items" 
-          :key="index"
-          class="bg-gradient-to-br from-white to-blue-50 rounded-xl border border-blue-100 shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out group hover:border-blue-300"
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button
+          v-for="category in categories"
+          :key="category"
+          @click="selectedCategory = category"
+          :class="[
+            'px-6 py-2 rounded-full transition-all font-medium',
+            selectedCategory === category
+              ? 'bg-gray-900 text-white'
+              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+          ]"
         >
-          <!-- Project Image Container -->
-          <div class="project-image-container overflow-hidden bg-gradient-to-br from-blue-100 to-blue-50 h-56 md:h-64">
-            <img 
-              v-if="project.image" 
-              :src="project.image.startsWith('/') ? project.image : '/' + project.image" 
+          {{ category }}
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <NuxtLink
+          v-for="project in filteredProjects"
+          :key="project.id"
+          :to="`/projects/${project.slug}`"
+          class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 cursor-pointer"
+        >
+          <!-- Image -->
+          <div class="relative overflow-hidden bg-gray-100">
+            <img
+              :src="project.image"
               :alt="project.title"
-              class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 ease-out"
+              class="w-full h-auto object-contain group-hover:scale-110 transition-transform duration-500"
             />
-            <div v-else class="w-full h-full flex items-center justify-center">
-              <span class="text-gray-400">Project Image</span>
-            </div>
+            <div
+              class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity"
+              :style="{ background: project.color }"
+            />
           </div>
-          
-          <!-- Project Content -->
-          <div class="p-6 md:p-8">
-            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-              <NuxtLink 
-                :to="`/projects/${project.title.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')}`"
-                class="hover:text-blue-600 transition-colors"
+
+          <!-- Content -->
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="px-3 py-1 text-xs font-semibold rounded-full text-white"
+                :style="{ background: project.color }"
               >
-                {{ project.title }}
-              </NuxtLink>
+                {{ project.category }}
+              </span>
+              <div class="flex items-center gap-1 text-sm text-gray-500">
+                <Icon name="simple-icons-calendar" class="w-4 h-4" />
+                <span>{{ project.date }}</span>
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
+              {{ project.title }}
             </h3>
-            <p class="text-gray-600 mb-4 text-sm leading-relaxed">{{ project.description }}</p>
-            
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span 
-                v-for="tag in project.tags" 
+
+            <p class="text-gray-600 mb-4 line-clamp-3">
+              {{ project.description }}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="tag in project.tags"
                 :key="tag"
-                class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full border border-blue-200"
+                class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
               >
                 {{ tag }}
               </span>
             </div>
-            
-            <!-- Features -->
-            <div class="pt-6 border-t border-blue-100">
-              <ul class="text-sm text-gray-600 space-y-2">
-                <li v-for="feature in project.features.slice(0, 3)" :key="feature" class="flex items-start gap-3">
-                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
+        </NuxtLink>
       </div>
-    </Container>
-  </div>
+    </div>
+  </section>
 </template>

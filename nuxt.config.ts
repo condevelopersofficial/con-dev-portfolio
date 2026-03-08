@@ -12,4 +12,17 @@ export default defineNuxtConfig({
   experimental: { appManifest: false },
   modules: ["@nuxt/icon", "@nuxt/image"],
   compatibilityDate: "2024-12-18",
+  nitro: {
+    prerender: {
+      routes: [
+        '/',
+        '/projects/unicore-business-suite',
+        '/projects/unicore-hr-solutions',
+        '/projects/income-tax-calculator',
+        '/projects/funnecto-messaging'
+      ],
+      crawlLinks: true,
+      failOnError: false
+    }
+  }
 });

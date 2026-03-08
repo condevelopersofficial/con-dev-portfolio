@@ -83,13 +83,13 @@ useHead({
           <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg p-8 text-white">
             <h3 class="text-xl font-bold mb-4">Project Overview</h3>
             <p class="text-gray-300 mb-4 leading-relaxed">
-              UniCore HR Solutions is an advanced HR management platform built with the MERN stack and AI capabilities. 
-              It features comprehensive employee lifecycle management, automated payroll with configurable rules, biometric 
-              attendance integration with Hikvision devices, and shift management with geo-fencing.
+              UniCore HR Solutions is an intelligent Human Resource Management System built with the MERN stack and integrated AI capabilities. The platform covers the entire employee lifecycle, including recruitment, onboarding, attendance tracking, payroll management, and employee performance insights.
+            </p>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              Key features include biometric attendance integration with Hikvision devices, shift scheduling with geo-fencing, automated payroll processing with configurable rules, leave management, employee loan tracking, and full & final settlement automation.
             </p>
             <p class="text-gray-300 leading-relaxed">
-              The system includes an AI-powered HR assistant using Ollama for intelligent query responses, advanced analytics 
-              with Recharts, leave management, loan tracking, and full & final settlement processing with automated calculations.
+              The system also includes an AI-powered HR Assistant powered by Ollama, enabling users to ask HR-related questions and receive intelligent responses. With interactive dashboards powered by Recharts and advanced analytics, the platform helps HR teams make informed workforce decisions while improving operational efficiency.
             </p>
           </div>
           
@@ -122,7 +122,7 @@ useHead({
       </div>
       
       <!-- Contact CTA -->
-      <div class="relative py-20 px-12 text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
+      <div class="relative py-20 px-6 md:px-12 text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-20" style="background: #22c55e" />
         <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl opacity-20" style="background: #6366f1" />
         

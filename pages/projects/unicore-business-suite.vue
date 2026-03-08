@@ -83,13 +83,13 @@ useHead({
           <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg p-8 text-white">
             <h3 class="text-xl font-bold mb-4">Project Overview</h3>
             <p class="text-gray-300 mb-4 leading-relaxed">
-              UniCore Business Suite is a comprehensive ERP system built with the MERN stack, providing complete business 
-              management including inventory tracking with barcode support, comprehensive accounting with general ledger and 
-              subsidiary ledgers, sales and purchase order management, and customer/vendor relationship management.
+              UniCore Business Suite is a full-featured ERP system built with the MERN stack, designed to streamline and centralize core business operations. The platform provides powerful modules for inventory management with barcode support, accounting with general and subsidiary ledgers, sales and purchase order processing, and customer/vendor relationship management.
+            </p>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              The system supports role-based access control, multi-user environments, real-time dashboards, and advanced business analytics. It also includes comprehensive reporting tools with PDF and Excel export capabilities, enabling businesses to monitor performance and make data-driven decisions.
             </p>
             <p class="text-gray-300 leading-relaxed">
-              The system features role-based access control, multi-user support, real-time analytics, and extensive reporting 
-              capabilities with PDF and Excel export functionality. Built for scalability and enterprise-level operations.
+              Built with scalability, security, and enterprise-grade architecture, UniCore Business Suite helps organizations efficiently manage daily operations while maintaining accurate financial and operational records.
             </p>
           </div>
           
@@ -122,7 +122,7 @@ useHead({
       </div>
       
       <!-- Contact CTA -->
-      <div class="relative py-20 px-12 text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
+      <div class="relative py-20 px-6 md:px-12 text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-20" style="background: #22c55e" />
         <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl opacity-20" style="background: #6366f1" />
         

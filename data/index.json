@@ -50,16 +50,10 @@
         "title": "UniCore Business Suite",
         "description": "Comprehensive ERP system with inventory management, accounting, order processing, and real-time analytics for complete business operations management.",
         "image": "/images/projects/unicore-business-suite.jpg",
-        "tags": [
-          "React",
-          "Node.js",
-          "MongoDB",
-          "Material-UI",
-          "Redux"
-        ],
+        "tags": ["React", "Node.js", "MongoDB", "Material-UI", "Redux"],
         "features": [
           "Inventory & Stock Management",
-          "Sales & Purchase Orders",
+          "Sales & Purchase Orders", 
           "General Ledger & Accounting",
           "Customer & Vendor Management",
           "Barcode & QR Code Generation",
@@ -72,17 +66,11 @@
         "title": "UniCore HR Solutions",
         "description": "Complete HR management platform with employee management, payroll processing, attendance tracking with biometric integration, and AI-powered HR assistant.",
         "image": "/images/projects/unicore-hr-solutions.jpg",
-        "tags": [
-          "React",
-          "Node.js",
-          "MongoDB",
-          "AI/ML",
-          "Material-UI"
-        ],
+        "tags": ["React", "Node.js", "MongoDB", "AI/ML", "Material-UI"],
         "features": [
           "Employee Management System",
           "Automated Payroll Processing",
-          "Biometric Attendance Integration",
+          "Biometric Attendance Integration", 
           "Shift & Schedule Management",
           "Leave & Holiday Management",
           "Loan & Advance Tracking",
@@ -96,17 +84,12 @@
         "title": "Income Tax Calculator",
         "description": "Advanced tax calculation engine with multi-year support (2014-2026), bulk Excel processing, and detailed financial reporting for individuals and businesses.",
         "image": "/images/projects/income-tax-calculator.jpg",
-        "tags": [
-          "Node.js",
-          "Express",
-          "Excel",
-          "REST API"
-        ],
+        "tags": ["Node.js", "Express", "Excel", "REST API"],
         "features": [
           "Multi-year Tax Calculations (2014-2026)",
           "Individual Tax Computation",
           "Bulk Excel Processing",
-          "Real-time Tax Computation",
+          "Real-time Tax Computation", 
           "Detailed Financial Reports",
           "Monthly & Annual Breakdowns",
           "Cross-year Comparison",
@@ -117,13 +100,7 @@
         "title": "Fannecto Messaging",
         "description": "Enterprise real-time messaging platform with Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.",
         "image": "/images/projects/fannecto-messaging.jpg",
-        "tags": [
-          "React",
-          "TypeScript",
-          "Socket.io",
-          "Node.js",
-          "Material-UI"
-        ],
+        "tags": ["React", "TypeScript", "Socket.io", "Node.js", "Material-UI"],
         "features": [
           "Real-time Messaging with Socket.io",
           "Group Chats & Channels",
@@ -136,30 +113,32 @@
           "Message Formatting & Emojis",
           "Password Reset System"
         ]
+      {
+        "title": "Funnecto Messaging",
+        "description": "Enterprise real-time messaging platform with AI-powered features, Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.",
+        "image": "/images/projects/funnecto-messaging.jpg",
+        "tags": [
+          "React",
+          "TypeScript",
+          "Socket.io",
+          "Node.js",
+          "Material-UI",
+          "AI/ML"
+        ],
+        "features": [
+          "Real-time Messaging with Socket.io",
+          "AI-Powered Message Insights",
+          "Group Chats & Channels",
+          "File Sharing & Preview",
+          "End-to-end Encryption",
+          "Presence & Typing Indicators",
+          "User Authentication & Authorization",
+          "Admin Dashboard",
+          "Email Notifications",
+          "Message Formatting & Emojis",
+          "Password Reset System"
+        ]
       }
-    ]
-  },
-  "features": {
-    "title": "Our Solutions",
-    "description": "We deliver comprehensive software solutions designed to solve complex business challenges:",
-    "items": [
-      {
-        "title": "Enterprise Resource Planning",
-        "description": "Full-featured ERP systems with inventory, accounting, order management, and real-time analytics."
-      },
-      {
-        "title": "HR Management Systems",
-        "description": "Complete HR platforms with payroll automation, biometric integration, and AI-powered assistance."
-      },
-      {
-        "title": "Financial Applications",
-        "description": "Advanced financial tools for tax calculation, accounting, and compliance management."
-      },
-      {
-        "title": "Real-time Communication",
-        "description": "Secure messaging platforms with Socket.io, file sharing, and enterprise-grade features."
-      },
-      {
         "title": "Custom Web Applications",
         "description": "Scalable MERN stack applications with modern UI frameworks and best practices."
       },
@@ -184,7 +163,7 @@
       {
         "quote": "The HR Solutions platform with AI assistant streamlined our entire HR workflow, reducing administrative overhead by 40% while improving employee satisfaction.",
         "author": {
-          "name": "Michael Chen",
+          "name": "Michael Chen", 
           "title": "HR Director, Global Solutions",
           "avatar": "images/person-2.jpg"
         }
@@ -201,14 +180,14 @@
   },
   "cta": {
     "title": "Ready to Transform Your Business?",
-    "description": "Let us discuss how our software solutions can drive efficiency and growth for your organization.",
+    "description": "Let's discuss how our software solutions can drive efficiency and growth for your organization.",
     "buttons": [
       {
         "label": "Schedule a Consultation",
         "url": "mailto:condevelopersofficial@gmail.com"
       },
       {
-        "label": "View Case Studies",
+        "label": "View Case Studies", 
         "url": "#projects"
       }
     ]

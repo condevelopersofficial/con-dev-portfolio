@@ -83,13 +83,13 @@ useHead({
           <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg p-8 text-white">
             <h3 class="text-xl font-bold mb-4">Project Overview</h3>
             <p class="text-gray-300 mb-4 leading-relaxed">
-              The Income Tax Calculator is a robust Node.js application featuring a comprehensive tax calculation engine 
-              with support for 12 tax years (2014-2026). It provides both individual and bulk tax calculations through 
-              Excel file uploads, real-time computation with monthly and annual breakdowns, and cross-year tax comparisons.
+              The Income Tax Calculator is a powerful Node.js-based tax computation system designed to simplify complex tax calculations. It supports 12 tax years (2014–2026) and enables users to perform both individual and bulk tax calculations through Excel file uploads.
+            </p>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+              The platform provides real-time tax computation with detailed monthly and annual breakdowns, along with cross-year tax comparisons for financial analysis and planning. It also includes a RESTful API for easy integration with other financial systems, making it suitable for accountants, finance professionals, and software integrations.
             </p>
             <p class="text-gray-300 leading-relaxed">
-              The system includes a REST API for easy integration, detailed financial reporting, and a user-friendly web 
-              interface for tax planning and compliance. Built for accuracy and efficiency in financial calculations.
+              With accurate financial calculations, detailed reporting, and a user-friendly web interface, the system helps users efficiently manage tax planning and compliance.
             </p>
           </div>
           
@@ -122,7 +122,7 @@ useHead({
       </div>
       
       <!-- Contact CTA -->
-      <div class="relative py-20 px-12 text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
+      <div class="relative py-20 px-6 md:px-12 text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-20" style="background: #22c55e" />
         <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl opacity-20" style="background: #6366f1" />
         

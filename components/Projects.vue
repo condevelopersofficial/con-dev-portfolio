@@ -39,11 +39,11 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Fannecto Messaging',
-    slug: 'fannecto-messaging',
-    description: 'Enterprise real-time messaging platform with Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.',
-    image: '/images/projects/fannecto-messaging.jpg',
-    tags: ['React', 'TypeScript', 'Socket.io', 'Node.js', 'Material-UI'],
+    title: 'Funnecto Messaging',
+    slug: 'funnecto-messaging',
+    description: 'Enterprise real-time messaging platform with AI-powered features, Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.',
+    image: '/images/projects/funnecto-messaging.jpg',
+    tags: ['React', 'TypeScript', 'Socket.io', 'Node.js', 'Material-UI', 'AI/ML'],
     color: '#fed600',
     category: 'Communication',
     date: 'December 2025'

@@ -113,6 +113,7 @@
           "Message Formatting & Emojis",
           "Password Reset System"
         ]
+      },
       {
         "title": "Funnecto Messaging",
         "description": "Enterprise real-time messaging platform with AI-powered features, Socket.io, end-to-end encryption, group chats, file sharing, and comprehensive notification system.",
@@ -139,6 +140,29 @@
           "Password Reset System"
         ]
       }
+    ]
+  },
+  "features": {
+    "title": "Our Solutions",
+    "description": "We deliver comprehensive software solutions designed to solve complex business challenges:",
+    "items": [
+      {
+        "title": "Enterprise Resource Planning",
+        "description": "Full-featured ERP systems with inventory, accounting, order management, and real-time analytics."
+      },
+      {
+        "title": "HR Management Systems",
+        "description": "Complete HR platforms with payroll automation, biometric integration, and AI-powered assistance."
+      },
+      {
+        "title": "Financial Applications",
+        "description": "Advanced financial tools for tax calculation, accounting, and compliance management."
+      },
+      {
+        "title": "Real-time Communication",
+        "description": "Secure messaging platforms with Socket.io, file sharing, and enterprise-grade features."
+      },
+      {
         "title": "Custom Web Applications",
         "description": "Scalable MERN stack applications with modern UI frameworks and best practices."
       },

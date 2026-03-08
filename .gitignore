@@ -30,4 +30,4 @@ logs
 .netlify
 
 # Projects folder (local reference only, not for GitHub)
-projects/
+/projects/

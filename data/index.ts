@@ -185,10 +185,10 @@ export const projects: ProjectsData = {
       slug: 'unicore-business-suite',
       description:
         'A cloud-based ERP & Business Suite for retail, wholesale, distribution, and service businesses — manage inventory, accounting, sales, CRM, and analytics from one place, with an optional purpose-built Optical & Prescription module.',
-      image: '/images/projects/unicore-business-suite.jpg',
+      image: '/images/projects/ucbslatest.png',
       imageAlt: 'UniCore Business Suite',
-      imageWidth: 1300,
-      imageHeight: 620,
+      imageWidth: 1351,
+      imageHeight: 630,
       tags: [
         'React',
         'Node.js',
@@ -197,6 +197,7 @@ export const projects: ProjectsData = {
         'Redux',
         'PWA',
         'Socket.io',
+        'SaaS',
       ],
       color: '#22c55e',
       category: 'ERP',

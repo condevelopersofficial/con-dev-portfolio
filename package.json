@@ -1,5 +1,5 @@
 {
-  "name": "con-dev-portfolio-next",
+  "name": "con-dev-portfolio",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "serve out -l 3000",
-    "lint": "eslint ."
+    "lint": "next lint"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

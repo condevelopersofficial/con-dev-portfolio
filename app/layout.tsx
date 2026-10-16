@@ -48,11 +48,9 @@ export const metadata: Metadata = {
     icon: '/images/Logo.png',
     apple: '/images/Logo.png',
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
+  // Crawling directives come from app/robots.ts plus each route's own metadata.
+  // Declaring `index, follow` here would add a second, conflicting robots meta
+  // tag to the generated 404 page, which Next already marks as noindex.
 };
 
 export const viewport: Viewport = {

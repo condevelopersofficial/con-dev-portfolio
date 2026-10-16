@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #030213;
+  --color-primary-light: #ffffff;
+  --color-brand-green: #22c55e;
+  --color-brand-yellow: #fed600;
+  --color-brand-red: #ef4444;
+  --color-brand-blue: #6366f1;
+  --color-gray-900: #111827;
+  --color-gray-600: #4b5563;
+  --color-gray-50: #f9fafb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900;
+  font-family: 'Inter', 'Helvetica', sans-serif;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl font-bold;
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}
+
+h4 {
+  @apply text-xl font-bold;
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent;
+  }
+  
+  .blur-glow {
+    @apply blur-3xl opacity-20;
+  }
+}

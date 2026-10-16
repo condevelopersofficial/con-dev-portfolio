@@ -1,13 +1,10 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+# Next.js build output
+con-dev-portfolio-next/.next
+con-dev-portfolio-next/out
 
 # Node dependencies
 node_modules
+con-dev-portfolio-next/node_modules
 
 # Logs
 logs
@@ -26,8 +23,12 @@ logs
 # VSC
 .history
 
-# Local Netlify folder
+# Local Netlify folder (CLI state, never commit)
 .netlify
+
+# Editor / assistant local state
+.vscode/
+.qoder/
 
 # Projects folder (local reference only, not for GitHub)
 /projects/

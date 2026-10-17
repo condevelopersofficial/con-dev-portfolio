@@ -78,12 +78,19 @@ export default function Projects() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span
-                    className="px-3 py-1 text-xs font-semibold rounded-full text-white"
-                    style={{ background: project.color }}
-                  >
-                    {project.category}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="px-3 py-1 text-xs font-semibold rounded-full text-white"
+                      style={{ background: project.color }}
+                    >
+                      {project.category}
+                    </span>
+                    {project.pricing && (
+                      <span className="px-3 py-1 text-xs font-semibold rounded-full text-green-700 bg-green-50 border border-green-200 whitespace-nowrap">
+                        Starting at {project.pricing.plans[0].price} {project.pricing.plans[0].period}
+                      </span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-1 text-sm text-gray-500">
                     <Calendar className="w-4 h-4" />
                     <span>{project.date}</span>

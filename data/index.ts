@@ -51,6 +51,28 @@ export interface ProjectCta {
   buttons: Button[];
 }
 
+export interface SubscriptionPlan {
+  name: string;
+  price: string;
+  period: string;
+  usersIncluded: string;
+  description: string;
+  color: string;
+}
+
+export interface FirstMonthExample {
+  label: string;
+  amount: string;
+}
+
+export interface PricingData {
+  plans: SubscriptionPlan[];
+  addOns: string[];
+  allPlansInclude: string[];
+  setupFee: { amount: string; description: string };
+  firstMonthExamples: FirstMonthExample[];
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -69,6 +91,14 @@ export interface Project {
   overview: string[];
   techStack: TechStackGroup[];
   cta: ProjectCta;
+  /** Optional SaaS subscription pricing - rendered on the detail page when present. */
+  pricing?: PricingData;
+  /** Optional longer tagline shown under the title on the detail page (falls back to `description`). */
+  tagline?: string;
+  /** Optional technology chips for the detail page (falls back to `tags`). */
+  technologies?: string[];
+  /** Optional small callout note rendered beneath the overview on the detail page. */
+  note?: string;
 }
 
 /** Kept as an alias so the home-page grid and the detail pages share one type. */
@@ -253,64 +283,137 @@ export const projects: ProjectsData = {
           { label: 'View All Projects', url: '/' },
         ],
       },
+      pricing: {
+        plans: [
+          {
+            name: 'Basic',
+            price: 'Rs. 5,000',
+            period: '/ month',
+            usersIncluded: '1 User included',
+            description: 'Perfect for an individual or a small business.',
+            color: '#16a34a',
+          },
+          {
+            name: 'Standard',
+            price: 'Rs. 9,000',
+            period: '/ month',
+            usersIncluded: '3 Users included',
+            description:
+              'Ideal for a business where several staff members use the system.',
+            color: '#2563eb',
+          },
+          {
+            name: 'Business',
+            price: 'Rs. 10,000',
+            period: '/ month',
+            usersIncluded: '4 Users included',
+            description:
+              'Best for a business needing four individual user accounts.',
+            color: '#dc2626',
+          },
+        ],
+        addOns: [
+          'Additional User: Rs. 2,000 per user / month (for users beyond the included limit in any plan)',
+        ],
+        allPlansInclude: [
+          'Core Business Modules',
+          'Regular Updates',
+          'Standard Support',
+          'Reliable Performance',
+        ],
+        setupFee: {
+          amount: 'Rs. 30,000',
+          description:
+            'One-time setup fee (configuration, data migration & onboarding), paid once per business (tenant) regardless of the plan or number of users.',
+        },
+        firstMonthExamples: [
+          { label: 'Basic', amount: 'Rs. 35,000' },
+          { label: 'Standard', amount: 'Rs. 39,000' },
+          { label: 'Business', amount: 'Rs. 40,000' },
+        ],
+      },
     },
     {
       id: 2,
       title: 'UniCore HR Solutions',
       slug: 'unicore-hr-solutions',
       description:
-        'Complete HR management platform with employee management, payroll processing, attendance tracking with biometric integration, and AI-powered HR assistant.',
+        'Complete multi-unit HR management platform — full employee lifecycle, configurable payroll, Hikvision biometric attendance, loans & settlements, and multi-level approval workflows, with an optional AI-powered HR assistant.',
+      tagline:
+        'A comprehensive, multi-unit HR Management Platform — covering the full employee lifecycle, payroll, biometric attendance, loans & settlements, and configurable approval workflows, with an optional AI-powered HR assistant.',
       image: '/images/projects/unicore-hr-solutions.jpg',
       imageAlt: 'UniCore HR Solutions',
-      imageWidth: 1300,
-      imageHeight: 619,
-      tags: ['React', 'Node.js', 'MongoDB', 'AI/ML', 'Material-UI'],
+      imageWidth: 1352,
+      imageHeight: 633,
+      tags: ['React', 'Node.js', 'MongoDB', 'Material-UI', 'AI/ML', 'Multi-Unit'],
+      technologies: [
+        'React',
+        'Node.js',
+        'MongoDB',
+        'MySQL',
+        'Material-UI',
+        'AI/ML',
+        'Recharts',
+        'Multi-Unit',
+      ],
       color: '#6366f1',
       category: 'HR',
-      date: 'February 2026',
+      date: 'October 2026',
       features: [
-        'Employee Management System',
-        'Automated Payroll Processing',
-        'Biometric Attendance Integration',
-        'Shift & Schedule Management',
-        'Leave & Holiday Management',
-        'Loan & Advance Tracking',
-        'AI-Powered HR Assistant',
-        'Performance Analytics Dashboard',
-        'Geo-fencing & Location Tracking',
-        'Full & Final Settlement',
+        'Employee Lifecycle Management — onboarding to exit, master data & documents, department/unit assignment, and transfer history with segment tracking',
+        'Automated Payroll Processing — configurable salary structures & payroll rules, payslip generation, and income-tax deduction reporting',
+        'Payroll Disbursement Reports — bank-transfer and cash-denomination reports for clean, audit-ready salary payouts',
+        'Biometric Attendance Integration — Hikvision device sync with live tracking, and support for day, night, and overnight shifts',
+        'Attendance Controls & Corrections — self check-in, correction requests, and geo-fenced location validation',
+        'Shift & Schedule Management — policy-driven shift rules, special-hours configuration, and overtime handling',
+        'Leave & Holiday Management — leave applications, company leave, and holiday-status tracking',
+        'Loans, Advances & Full & Final Settlement — loan register & ledger, guarantor and monthly-deduction reports, advance-salary applications, and end-of-service settlement',
+        'Bonuses & Overtime — bonus runs and overtime requests, each governed by their own approval chain',
+        'Multi-Level Approval Workflow — a centralized Approvals Center with configurable level-1/2/3 approval chains and a “return for correction” path across salary, overtime, bonus, leave, and loan requests',
+        'Multi-Unit & Multi-Branch Architecture — unit-scoped data isolation, per-unit rules and dashboards, and cross-unit reporting from a single platform',
+        'Roles, Permissions & Audit Trail — fine-grained role-based access and complete audit logging for security and compliance',
+        'Employee Self-Service Portal — personalized dashboards, payslip access, and leave/loan/attendance requests',
+        'Interactive Analytics & Reporting — role-based dashboards (HR / Manager / Employee) with Excel & PDF export and bulk import',
+        'Geo-Fencing & Live Tracking — location-based attendance verification with real-time workforce visibility',
+        'Secure & Mobile-Ready — role-based access control and an installable, responsive PWA experience across devices',
+        'AI-Powered HR Assistant (optional add-on) — an intelligent, natural-language HR assistant available on client request under a separate monthly subscription',
       ],
       overview: [
-        'UniCore HR Solutions is an intelligent Human Resource Management System built with the MERN stack and integrated AI capabilities. The platform covers the entire employee lifecycle, including recruitment, onboarding, attendance tracking, payroll management, and employee performance insights.',
-        'Key features include biometric attendance integration with Hikvision devices, shift scheduling with geo-fencing, automated payroll processing with configurable rules, leave management, employee loan tracking, and full & final settlement automation.',
-        'The system also includes an AI-powered HR Assistant powered by Ollama, enabling users to ask HR-related questions and receive intelligent responses. With interactive dashboards powered by Recharts and advanced analytics, the platform helps HR teams make informed workforce decisions while improving operational efficiency.',
+        'UniCore HR Solutions is an intelligent, enterprise-grade Human Resource Management System built for organizations that need to run HR operations with accuracy, control, and visibility. It manages the entire employee lifecycle — from onboarding through attendance, payroll, and separation — and is architected for multi-unit and multi-branch businesses, where every record, rule, and report is automatically scoped to the units each user is authorized to see.',
+        'The platform delivers a configurable payroll engine (salary structures, payroll rules, payslips, income-tax deductions, and bank/cash disbursement reports), biometric attendance integration with Hikvision devices — including live tracking and overnight-shift handling — and a full suite for leave, loans, advances, bonuses, overtime, and full & final settlement. A centralized multi-level approval workflow lets organizations define approval chains that govern salary, overtime, bonus, leave, and loan requests, with a return-for-correction loop, all backed by role-based access control and a complete audit trail. Employees get a self-service portal and role-based dashboards, and teams get interactive analytics for better workforce decisions.',
+        'For clients who want more, UniCore HR offers an optional AI-Powered HR Assistant — a natural-language assistant that answers HR questions and surfaces insights. This add-on is provided on request under a separate monthly subscription. Built for single companies and multi-entity groups alike that need operational efficiency, data integrity, and workforce insight.',
       ],
+      note:
+        'The core HR platform covers all features above. The AI-Powered HR Assistant is an optional add-on, enabled on client request under a separate monthly subscription.',
       techStack: [
         {
           heading: 'Frontend',
           items: [
-            'React 19 with Material-UI',
-            'Recharts Analytics',
-            'React Router DOM',
-            'Excel Processing',
-            'File Upload & Export',
+            'React with Material-UI (MUI)',
+            'Interactive Dashboards & Analytics (Recharts)',
+            'Role-Based & Unit-Scoped Views',
+            'Employee Self-Service Portal',
+            'Excel & PDF Reporting, Bulk Import',
+            'Installable, Mobile-Ready PWA',
           ],
         },
         {
-          heading: 'Backend',
+          heading: 'Backend & Integrations',
           items: [
             'Node.js with Express',
-            'MongoDB & MySQL',
-            'Ollama AI Integration',
-            'Hikvision API',
-            'Geo-fencing & Caching',
+            'MongoDB (with MySQL integration)',
+            'Hikvision Biometric Device Integration',
+            'Secure Token Authentication with Role-Based Permissions',
+            'Multi-Unit Data Isolation',
+            'Geo-Fencing & Attendance Tracking',
+            'Optional AI Assistant (Ollama-powered)',
           ],
         },
       ],
       cta: {
-        title: 'Ready to optimize your HR processes?',
+        title: 'Ready to modernize your HR operations?',
         description:
-          'Contact us to discover how UniCore HR Solutions can transform your human resources management.',
+          'Contact us to discover how UniCore HR Solutions can bring accuracy, control, and insight to your workforce management.',
         buttons: [
           { label: 'Email Us', url: `mailto:${CONTACT_EMAIL}` },
           { label: 'View All Projects', url: '/' },

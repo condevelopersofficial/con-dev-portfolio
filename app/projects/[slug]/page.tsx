@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { getProjectBySlug, getProjectSlugs } from '@/data';
 import Cta from '@/components/Cta';
+import PricingPlans from '@/components/PricingPlans';
 
 interface ProjectPageProps {
   params: { slug: string };
@@ -69,7 +70,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             {project.title}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {project.description}
+            {project.tagline ?? project.description}
           </p>
         </div>
 
@@ -110,7 +111,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Technologies</h2>
               <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+                {(project.technologies ?? project.tags).map((tag) => (
                   <span
                     key={tag}
                     className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
@@ -132,6 +133,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 ))}
               </div>
             </div>
+
+            {/* Optional add-on / pricing callout note beneath the overview */}
+            {project.note && (
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl px-6 py-4">
+                <p className="text-sm text-amber-900 leading-relaxed">
+                  <span className="font-semibold">Note:</span> {project.note}
+                </p>
+              </div>
+            )}
 
             {/* Technical Stack */}
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
@@ -155,6 +165,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
 
+        {/* Subscription plans - only rendered for projects that publish pricing */}
+        {project.pricing && <PricingPlans pricing={project.pricing} />}
+        
         {/* Project CTA */}
         <Cta
           title={project.cta.title}

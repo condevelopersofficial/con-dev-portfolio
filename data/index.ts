@@ -51,28 +51,6 @@ export interface ProjectCta {
   buttons: Button[];
 }
 
-export interface SubscriptionPlan {
-  name: string;
-  price: string;
-  period: string;
-  usersIncluded: string;
-  description: string;
-  color: string;
-}
-
-export interface FirstMonthExample {
-  label: string;
-  amount: string;
-}
-
-export interface PricingData {
-  plans: SubscriptionPlan[];
-  addOns: string[];
-  allPlansInclude: string[];
-  setupFee: { amount: string; description: string };
-  firstMonthExamples: FirstMonthExample[];
-}
-
 export interface Project {
   id: number;
   title: string;
@@ -91,8 +69,6 @@ export interface Project {
   overview: string[];
   techStack: TechStackGroup[];
   cta: ProjectCta;
-  /** Optional SaaS subscription pricing - rendered on the detail page when present. */
-  pricing?: PricingData;
   /** Optional longer tagline shown under the title on the detail page (falls back to `description`). */
   tagline?: string;
   /** Optional technology chips for the detail page (falls back to `tags`). */
@@ -281,55 +257,6 @@ export const projects: ProjectsData = {
         buttons: [
           { label: 'Email Us', url: `mailto:${CONTACT_EMAIL}` },
           { label: 'View All Projects', url: '/' },
-        ],
-      },
-      pricing: {
-        plans: [
-          {
-            name: 'Basic',
-            price: 'Rs. 5,000',
-            period: '/ month',
-            usersIncluded: '1 User included',
-            description: 'Perfect for an individual or a small business.',
-            color: '#16a34a',
-          },
-          {
-            name: 'Standard',
-            price: 'Rs. 9,000',
-            period: '/ month',
-            usersIncluded: '3 Users included',
-            description:
-              'Ideal for a business where several staff members use the system.',
-            color: '#2563eb',
-          },
-          {
-            name: 'Business',
-            price: 'Rs. 10,000',
-            period: '/ month',
-            usersIncluded: '4 Users included',
-            description:
-              'Best for a business needing four individual user accounts.',
-            color: '#dc2626',
-          },
-        ],
-        addOns: [
-          'Additional User: Rs. 2,000 per user / month (for users beyond the included limit in any plan)',
-        ],
-        allPlansInclude: [
-          'Core Business Modules',
-          'Regular Updates',
-          'Standard Support',
-          'Reliable Performance',
-        ],
-        setupFee: {
-          amount: 'Rs. 30,000',
-          description:
-            'One-time setup fee (configuration, data migration & onboarding), paid once per business (tenant) regardless of the plan or number of users.',
-        },
-        firstMonthExamples: [
-          { label: 'Basic', amount: 'Rs. 35,000' },
-          { label: 'Standard', amount: 'Rs. 39,000' },
-          { label: 'Business', amount: 'Rs. 40,000' },
         ],
       },
     },

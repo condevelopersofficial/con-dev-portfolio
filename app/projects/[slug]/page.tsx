@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { getProjectBySlug, getProjectSlugs } from '@/data';
 import Cta from '@/components/Cta';
-import PricingPlans from '@/components/PricingPlans';
 
 interface ProjectPageProps {
   params: { slug: string };
@@ -134,7 +133,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
 
-            {/* Optional add-on / pricing callout note beneath the overview */}
+            {/* Optional add-on callout note beneath the overview */}
             {project.note && (
               <div className="bg-amber-50 border border-amber-200 rounded-2xl px-6 py-4">
                 <p className="text-sm text-amber-900 leading-relaxed">
@@ -165,9 +164,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
 
-        {/* Subscription plans - only rendered for projects that publish pricing */}
-        {project.pricing && <PricingPlans pricing={project.pricing} />}
-        
         {/* Project CTA */}
         <Cta
           title={project.cta.title}

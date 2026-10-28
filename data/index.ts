@@ -570,7 +570,7 @@ export const social: SocialData = {
   links: [
     {
       name: 'Facebook',
-      url: 'https://facebook.com/condevelopers',
+      url: 'https://www.facebook.com/condevelopersofficial',
       icon: 'simple-icons:facebook',
     },
     {
@@ -579,8 +579,13 @@ export const social: SocialData = {
       icon: 'simple-icons:instagram',
     },
     {
+      name: 'Threads',
+      url: 'https://www.threads.com/@condevelopersofficial',
+      icon: 'simple-icons:threads',
+    },
+    {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/con-developers',
+      url: 'https://www.linkedin.com/company/condevelopers',
       icon: 'simple-icons:linkedin',
     },
     {

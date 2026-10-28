@@ -13,7 +13,7 @@ interface SocialLinksProps {
 }
 
 /**
- * Social media links (Facebook, Instagram, LinkedIn, WhatsApp).
+ * Social media links (Facebook, Instagram, Threads, LinkedIn, WhatsApp).
  *
  * Migrated from Nuxt's `SocialLinks.vue`: the icon names stored in the data file
  * are resolved through `getIcon()` instead of `<Icon name="..." />`.
